@@ -8,11 +8,15 @@ export interface MiniAppContext {
   sdk: MiniAppSDK;
   context: Context.MiniAppContext | undefined;
   isInMiniApp: boolean | undefined;
+  email?: string;
+  setEmail: (email: string) => void;
 }
 const defaultSettings: MiniAppContext = {
   sdk,
   context: undefined,
   isInMiniApp: undefined,
+  email: undefined,
+  setEmail: () => {},
 };
 const MiniAppContext = createContext<MiniAppContext>(defaultSettings);
 
@@ -46,8 +50,12 @@ export function MiniAppProvider({ children }: { children: React.ReactNode }) {
     ready();
   }, []);
 
+  const setEmail = (email: string) => {
+    setContext((oldContext) => ({ ...oldContext, email }));
+  };
+
   return (
-    <MiniAppContext.Provider value={context}>
+    <MiniAppContext.Provider value={{ ...context, setEmail }}>
       {children}
     </MiniAppContext.Provider>
   );
