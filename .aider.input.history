@@ -124,3 +124,13 @@
 +  winner text check (winner in ('bull','bear')),
 +  created_at timestamp default now()
 +);
+
+# 2025-11-21 18:57:00.005799
++rm -f package-lock.json
++npm config set legacy-peer-deps true   # если у вас конфликты peer-deps
++npm install --package-lock-only --legacy-peer-deps
+
+# 2025-11-21 18:57:00.006668
++rm -f package-lock.json
++npm config set legacy-peer-deps true   # если у вас конфликты peer-deps
++npm install --package-lock-only --legacy-peer-deps
