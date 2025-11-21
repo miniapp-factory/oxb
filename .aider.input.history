@@ -28,3 +28,99 @@
 
 # 2025-11-21 18:18:42.946974
 +I need to add a connection via email
+
+# 2025-11-21 18:26:00.313699
++You are an expert full-stack developer. Take the existing open-source repo https://github.com/miniapp-factory/oxb (a Bulls vs Bears clicker mini-app) and upgrade it to a viral, beautiful, real-time crypto battle arena with the following new features:
++
++MANDATORY UPGRADES:
++
++1. Add Email Login via Privy
++   - Already using Privy → just enable "email" in loginMethods
++   - Show email avatar (gravatar or default)
++
++2. Real-time Chart (Crypto Mood Index over time)
++   - Use TradingView Lightweight Charts (https://www.tradingview.com/lightweight-charts/) or react-chartjs-2 with candlestick style
++   - Every fight updates the chart in real-time (green/red candle based on who won the last 100 fights)
++   - X-axis: time (last 50 updates), Y-axis: Mood Index % (0-100)
++   - Smooth line + area fill (green when bullish, red when bearish)
++   - Auto-scroll to latest data
++
++3. Epic Visual Battle Animation (centerpiece)
++   - Canvas or CSS + Framer Motion animation
++   - Huge 3D-looking bull (left) and bear (right) charging at each other
++   - When someone clicks BULL → bull charges forward, screen shakes green, laser eyes glow
++   - When BEAR wins → bear roars, red blood effect, screen shake
++   - Power bars above each animal (fill based on total votes)
++   - Confetti + sound effect optional (use Howler.js or just CSS)
++
++4. Additional Viral Features
++   - After fight: "You just pushed the market X% bullish/bearish!"
++   - Share on X button with dynamic text + chart screenshot
++   - Daily reset counter or "all-time" vs "24h" toggle
++   - Total fights counter with comma animation
++
++Tech Stack (must use exactly this):
++- Next.js 14 App Router + TypeScript
++- Privy.io (already in repo) → add email login
++- Supabase (already in repo) → add new table "mood_history" for chart data
++- Tailwind CSS + shadcn/ui or custom neon style
++- Lightweight Charts (TradingView) OR Chart.js with candlesticks
++- Framer Motion + react-use for animations
++- react-hot-toast for notifications
++
++New Supabase table:
++`sql
++create table mood_history (
++  id uuid primary key default uuid_generate_v4(),
++  mood_percent numeric not null,
++  winner text check (winner in ('bull','bear')),
++  created_at timestamp default now()
++);
+
+# 2025-11-21 18:26:00.314442
++You are an expert full-stack developer. Take the existing open-source repo https://github.com/miniapp-factory/oxb (a Bulls vs Bears clicker mini-app) and upgrade it to a viral, beautiful, real-time crypto battle arena with the following new features:
++
++MANDATORY UPGRADES:
++
++1. Add Email Login via Privy
++   - Already using Privy → just enable "email" in loginMethods
++   - Show email avatar (gravatar or default)
++
++2. Real-time Chart (Crypto Mood Index over time)
++   - Use TradingView Lightweight Charts (https://www.tradingview.com/lightweight-charts/) or react-chartjs-2 with candlestick style
++   - Every fight updates the chart in real-time (green/red candle based on who won the last 100 fights)
++   - X-axis: time (last 50 updates), Y-axis: Mood Index % (0-100)
++   - Smooth line + area fill (green when bullish, red when bearish)
++   - Auto-scroll to latest data
++
++3. Epic Visual Battle Animation (centerpiece)
++   - Canvas or CSS + Framer Motion animation
++   - Huge 3D-looking bull (left) and bear (right) charging at each other
++   - When someone clicks BULL → bull charges forward, screen shakes green, laser eyes glow
++   - When BEAR wins → bear roars, red blood effect, screen shake
++   - Power bars above each animal (fill based on total votes)
++   - Confetti + sound effect optional (use Howler.js or just CSS)
++
++4. Additional Viral Features
++   - After fight: "You just pushed the market X% bullish/bearish!"
++   - Share on X button with dynamic text + chart screenshot
++   - Daily reset counter or "all-time" vs "24h" toggle
++   - Total fights counter with comma animation
++
++Tech Stack (must use exactly this):
++- Next.js 14 App Router + TypeScript
++- Privy.io (already in repo) → add email login
++- Supabase (already in repo) → add new table "mood_history" for chart data
++- Tailwind CSS + shadcn/ui or custom neon style
++- Lightweight Charts (TradingView) OR Chart.js with candlesticks
++- Framer Motion + react-use for animations
++- react-hot-toast for notifications
++
++New Supabase table:
++`sql
++create table mood_history (
++  id uuid primary key default uuid_generate_v4(),
++  mood_percent numeric not null,
++  winner text check (winner in ('bull','bear')),
++  created_at timestamp default now()
++);
