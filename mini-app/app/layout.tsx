@@ -4,6 +4,8 @@ import "./globals.css";
 import { MiniAppProvider } from "@/components/context/miniapp-provider";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { Login } from "@/components/login";
+import { Scoreboard } from "@/components/scoreboard";
 import { description, title } from "@/lib/metadata";
 
 const inter = localFont({
@@ -26,7 +28,9 @@ export default function RootLayout({
         <MiniAppProvider>
           <div className="font-sans min-h-screen flex flex-col place-content-between gap-2">
             <Header />
+            <Login />
             {children}
+            <Scoreboard />
             <Footer />
           </div>
         </MiniAppProvider>
